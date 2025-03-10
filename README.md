@@ -1,4 +1,4 @@
-# TibNorm
+# TibNormCSV
 
         TibNorm is a utility for producing normalised versions of Tibetan texts to make them easier 
         for contemporary users to search and read, in line with current Tibetan writing conventions. As part 
