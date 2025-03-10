@@ -22,15 +22,20 @@
 **TibNormCSV** applies TibNorm's normalisation operations to text entries in a **.csv column**, rather than to .txt files stored in a given directory.
 
 ## How to use
+
+Ensure you have pandas installed. We have tested this code with **Python==3.12.2** and **pandas==2.2.3**. 
+
 1. Ensure your CSV file contains a column titled 'paragraph' which holds the text you wish to normalise. 
 2. Change your table path in _src/config.ini_
    - Set _table_path_ to the absolute path where the folder _tables_ is located. No need to wrap in quotation marks.
 3. Open your terminal and navigate the directory under Tibnorm.
 4. Execute the following command.
+   
 ```
 python src/main.py path/to/inputcsv/directory path/to/outputcsv/directory
 ```
-4. You can find the results in your stated output CSV directory. The normalised text will be inserted in a new column titled **'normalised_paragraph'** occurring after the 'paragraph' column.
+
+5. Find the results in your stated output CSV directory. The normalised text will be inserted in a new column titled **'normalised_paragraph'** occurring after the 'paragraph' column.
    
 
 ## Tables
