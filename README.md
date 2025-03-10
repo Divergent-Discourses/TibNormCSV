@@ -18,20 +18,20 @@
         abbreviations compiled by Bruno Lainé of the Tibetan Manuscript Project Vienna (TMPV) as part of 
         the project’s Resources for Kanjur and Tanjur Studies. In TibNorm, the user can manually change the 
         flag in the abbreviations table to exclude any abbreviation that they don’t want to expand.
-        
-        Tibnorm was developed for the Divergent Discourses project by Yuki Kyogoku of Leipzig University.
+
+**TibNormCSV** applies TibNorm's normalisation operations to text entries in a **.csv column**, rather than to .txt files stored in a given directory.
 
 ## How to use
-1. Change your path in _src/config.ini_
-   - Set to _table_path_ the absolute path where the folder _tables_ is located.
-   - Set to _text_path_ the absolute path where texts to be processed are located, but note that the project does not contain it.
-   - Set to _output_path_ the absolute path where the folder _output_ is located.
-2. Open your terminal and navigate the directory under Tibnorm.
-3. Execute the following command.
+1. Ensure your CSV file contains a column titled 'paragraph' which holds the text you wish to normalise. 
+2. Change your table path in _src/config.ini_
+   - Set _table_path_ to the absolute path where the folder _tables_ is located. No need to wrap in quotation marks.
+3. Open your terminal and navigate the directory under Tibnorm.
+4. Execute the following command.
 ```
-python src/main.py
+python src/main.py path/to/inputcsv/directory path/to/outputcsv/directory
 ```
-4. You can find the results in _output_.
+4. You can find the results in your stated output CSV directory. The normalised text will be inserted in a new column titled **'normalised_paragraph'** occurring after the 'paragraph' column.
+   
 
 ## Tables
 ### Description of tables
@@ -72,3 +72,8 @@ python src/main.py
 - When adding a new entry to a table, it's recommended to verify the success of the replacement and ensure that it doesn't impact other replacements, and to visualise the differences before and after adding the line for confirmation using a [diff-tool](https://www.site24x7.com/tools/diff-checker.html).
 - A character with a vowel, e.g., ཏེ (length=2), or a ligature, e.g., བཀྲམས (length=5), are computationally regarded as multiple characters. Thus, for example, if you refer to ཏ as a consonant, you should use regular expression, so that ཏ with any vowel is also included.
 - When adding an abbreviated form and its full form in table1, it is advisable to use tsheg both before and after the abbreviated and full forms. This helps avoid mistaken replacements of the same form appearing in the middle of a syllable. However, a drawback is that an abbreviated form at the beginning of the sentence remains unreplaced (See [issue](https://github.com/orgs/Divergent-Discourses/projects/1/views/1?pane=issue&itemId=50262100)).
+  
+
+## Copyright
+
+**TibNorm** was developed by Yuki Kyogoku of Leipzig University then modified by Christina Sabbagh (**TibNormCSV**) of SOAS, University of London, for the Divergent Discourses project. The project is a joint study involving SOAS University of London and Leipzig University, funded by the AHRC in the UK and the DFG in Germany. Please acknowledge the project in any use of these materials. Copyright for the project resides with the two universities. 
