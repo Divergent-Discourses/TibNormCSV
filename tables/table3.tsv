@@ -7,3 +7,4 @@ transcription	normalisation	exception	exc_len	scope	flag
 ཊ་	གས་	[་\\t\\n\\s]	1	left	1
 ཌ།	གས།	[་\\t\\n\\s]	1	left	1
 ཊ།	གས།	[་\\t\\n\\s]	1	left	1
+།	། 	[\\s)]	1	both	1
