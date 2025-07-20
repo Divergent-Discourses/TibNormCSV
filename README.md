@@ -32,7 +32,7 @@ Ensure you have pandas installed. We have tested this code with **Python==3.12.2
 4. Execute the following command.
    
 ```
-python src/main.py path/to/inputcsv/directory path/to/outputcsv/directory
+python src/main.py path/to/inputcsv/filename.csv path/to/outputcsv/filename.csv
 ```
 
 5. Find the results in your stated output CSV directory. The normalised text will be inserted in a new column titled **'normalised_paragraph'** occurring after the 'paragraph' column.
