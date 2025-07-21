@@ -16,7 +16,7 @@ def load_tables(config):
 
     for file in files:
         file_name = os.path.basename(file).split('.')[0]
-        df = pd.read_csv(file, sep='\t', escapechar='\\', index_col=None)
+        df = pd.read_csv(file, sep='\t', escapechar='\\', index_col=None, encoding="utf-8")
         if file_name in flag_tables:
             df['flag'] = df['flag'].apply(pd.to_numeric, errors='coerce').astype('Int64')
             tables[file_name] = df[df['flag'] == flag]  # Apply flag filter
@@ -77,7 +77,7 @@ def process_csv(input_csv, output_csv, tables):
     """
     Load a CSV file, normalise the text in the 'paragraph' column, and save a new CSV.
     """
-    df = pd.read_csv(input_csv)
+    df = pd.read_csv(input_csv, encoding="utf-8")
 
     if 'paragraph' not in df.columns:
         raise ValueError("The input CSV must contain a column named 'paragraph' holding the text to be normalised.")
