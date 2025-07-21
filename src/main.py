@@ -10,7 +10,9 @@ def main():
     args = parser.parse_args()
 
     config = ConfigParser()
-    config.read('src/config.ini')
+
+    with open('src/config.ini', encoding="utf-8") as f:
+        config.read_file(f)
 
     # load replacement tables
     tables = load_tables(config)
