@@ -21,14 +21,14 @@
 
 **TibNormCSV** applies TibNorm's normalisation operations to text entries in a **.csv column**, rather than to .txt files stored in a given directory.
 
-## How to use
+## How to use (single file)
 
 Ensure you have pandas installed. We have tested this code with **Python==3.12.2** and **pandas==2.2.3**. 
 
 1. Ensure your CSV file contains a column titled 'paragraph' which holds the text you wish to normalise. 
 2. Change your table path in _src/config.ini_
    - Set _table_path_ to the absolute path where the folder _tables_ is located. No need to wrap in quotation marks.
-3. Open your terminal and navigate the directory under Tibnorm.
+3. Open your terminal and navigate to the directory under TibNormCSV.
 4. Execute the following command.
    
 ```
@@ -36,7 +36,29 @@ python src/main.py path/to/inputcsv/filename.csv path/to/outputcsv/filename.csv
 ```
 
 5. Find the results in your stated output CSV directory. The normalised text will be inserted in a new column titled **'normalised_paragraph'** occurring after the 'paragraph' column.
-   
+
+## How to use (batch processing)
+
+If you want to process multiple .csv files at once, follow these steps instead of the above.
+Note that your .csv files still need to have a 'paragraph' column whose text you which to normalise. 
+They should not already have a 'normalised_paragraph' column or the code will not process the file.
+
+1. Put all of the .csv files you want to process in a single directory (anywhere). It can be nested - the code searches for .csv files recursively within your specified input directory.
+2. Change your table path in _src/config.ini_
+   - Set _table_path_ to the absolute path where the folder _tables_ is located. No need to wrap in quotation marks.
+3. Open your terminal and navigate to your TibNormCSV directory (using cd in command line)
+4. Activate your conda/virtual environment for TibNormCSV if you have one
+5. Do this once - make the new bash (.sh) file executable by running this command:
+
+```
+chmod +x ./batch_tibnormcsv.sh
+```
+
+6. Run the following command (swapping in your chosen input_dir and output_dir paths - the code will create your specified output_dir if it doesn't already exist)).
+
+```
+./batch_tibnormcsv.sh /path/to/input_dir /path/to/output_dir
+```
 
 ## Tables
 ### Description of tables
