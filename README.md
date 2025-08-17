@@ -54,7 +54,7 @@ They should not already have a 'normalised_paragraph' column or the code will no
 chmod +x ./batch_tibnormcsv.sh
 ```
 
-6. Run the following command (swapping in your chosen input_dir and output_dir paths - the code will create your specified output_dir if it doesn't already exist)).
+6. Run the following command (swapping in your chosen input_dir and output_dir paths - the code will create your specified output_dir if it doesn't already exist).
 
 ```
 ./batch_tibnormcsv.sh /path/to/input_dir /path/to/output_dir
