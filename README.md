@@ -48,7 +48,7 @@ They should not already have a 'normalised_paragraph' column or the code will no
    - Set _table_path_ to the absolute path where the folder _tables_ is located. No need to wrap in quotation marks.
 3. Open your terminal and navigate to your TibNormCSV directory (using cd in command line)
 4. Activate your conda/virtual environment for TibNormCSV if you have one
-5. Do this once - make the new bash (.sh) file executable by running this command:
+5. Do this once - make the file **batch_tibnormcsv.sh** executable by running this command:
 
 ```
 chmod +x ./batch_tibnormcsv.sh
