@@ -77,10 +77,16 @@ def process_csv(input_csv, output_csv, tables):
     """
     Load a CSV file, normalise the text in the 'paragraph' column, and save a new CSV.
     """
-    df = pd.read_csv(input_csv, encoding="utf-8")
+    df = pd.read_csv(input_csv, encoding='utf-8')
 
     if 'paragraph' not in df.columns:
-        raise ValueError("The input CSV must contain a column named 'paragraph' holding the text to be normalised.")
+        print(f"File {input_csv} does not contain a 'paragraph' column. Skipping.")
+        return
+
+    # Check if 'normalised_paragraph' already exists
+    if 'normalised_paragraph' in df.columns:
+        print(f"File {input_csv} already has 'normalised_paragraph'. Skipping.")
+        return
 
     df.insert(df.columns.get_loc('paragraph') + 1, 'normalised_paragraph', df['paragraph'].apply(lambda text: norm_text(text, tables)))
 
