@@ -40,8 +40,8 @@ python src/main.py path/to/inputcsv/filename.csv path/to/outputcsv/filename.csv
 ## How to use (batch processing)
 
 If you want to process multiple .csv files at once, follow these steps instead of the above.
-Note that your .csv files still need to have a 'paragraph' column whose text you which to normalise. 
-They should not already have a 'normalised_paragraph' column or the code will not process the file.
+Note that your .csv files still need to have a 'paragraph' column whose text you wish to normalise. 
+Files should not already have a 'normalised_paragraph' column or the code will not process them.
 
 1. Put all of the .csv files you want to process in a single directory (anywhere). It can be nested - the code searches for .csv files recursively within your specified input directory.
 2. Change your table path in _src/config.ini_
